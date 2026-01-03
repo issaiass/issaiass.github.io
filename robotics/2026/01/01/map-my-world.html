@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Building 2D and 3D maps in simulation using ROS, Gazebo, and RTAB-Map for autonomous robot mapping and localization.">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Robot Mapping with RTAB-Map – RoboND Map My World</title>
+
+	<!-- CSS -->
+	<!-- Bootstrap core CSS -->
+	<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+	<!-- Font Awesome CSS -->
+	<link href="/assets/css/all.css" rel="stylesheet" media="screen">
+
+	<!--[if lte IE 7]> 
+		<script src="/assets/js/icons-lte-ie7.js"></script>
+	<![endif]-->
+
+	<!-- Magnific-popup lightbox -->
+	<link href="/assets/css/magnific-popup.css" rel="stylesheet">
+
+	<!-- Owl Carousel -->
+	<link href="/assets/css/owl.theme.css" rel="stylesheet">
+	<link href="/assets/css/owl.carousel.css" rel="stylesheet">
+
+	<!-- Youtube background -->
+    <link rel="stylesheet" href="assets/css/ytplayer.css">
+
+	<!-- Animate css -->
+	<link href="/assets/css/animate.css" rel="stylesheet">
+
+	<!-- Leaflet CSS (for open-source maps) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+
+	<!-- Custom styles CSS -->
+	<link href="/assets/css/style.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+	<!-- Preloader -->
+
+	<div id="loading">
+		<div id="loading-center">
+			<div id="loading-center-absolute">
+				<div class="box">
+				  <div class="blobs">
+				    <div class="blob"></div>
+				    <div class="blob"></div>
+				  </div>
+
+				  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+				    <defs>
+				      <filter id="goo">
+				        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				        <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+				        <feBlend in="SourceGraphic" in2="goo" />
+				      </filter>
+				    </defs>
+				  </svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navigation start -->
+
+<header class="header">
+
+	<nav class="navbar navbar-custom">
+
+		<div class="container">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/index.html">XCENT</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="custom-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/#home">home</a></li>
+					<li><a href="/#portfolio">Works</a></li>
+					<li><a href="/#services">Service</a></li>
+					<li><a href="/#about">About</a></li>
+					<li><a href="/#testimonial">Testimonial</a></li>
+					<li><a href="/#blog">Blog</a></li>
+					<li><a href="/#contact">Contact</a></li>
+				</ul>
+			</div>
+
+		</div><!-- .container -->
+
+	</nav>
+
+</header>
+
+<!-- Navigation end -->
+
+<!-- Blog Detail Start -->
+
+<section class="blog-detail">
+	<div class="container">
+		<div class="blog-detail-banner wow fadeIn">
+			
+				<img src="/assets/images/rtabmap-2.png" alt="Robot Mapping with RTAB-Map – RoboND Map My World">
+			
+		</div>
+		<div class="blog-detail-contents wow fadeInUp">
+			<h2>Robot Mapping with RTAB-Map – RoboND Map My World</h2>
+			<div class="blog-detail-about clearfix">
+				<div class="media pull-left">
+					<div class="media-left">
+						<img src="/assets/images/avatar.jpg" class="media-object" alt="avatar">
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">RANGEL ALVARADO</h4>
+						<p>January 1, 2026</p>
+					</div>
+				</div>
+				<div class="blog-detail-category pull-right">
+					Robotics
+				</div>
+			</div>
+			<div class="blog-detail-content">
+				<h2 id="robond_p4_mapmyworld">RoboND_P4_MapMyWorld</h2>
+
+<p><strong>GitHub Repository:</strong><br />
+<a href="https://github.com/issaiass/RoboND_P4_MapMyWorld">RoboND_P4_MapMyWorld</a></p>
+
+<h3 id="brief-review">Brief Review</h3>
+
+<p>This repository contains all the necessary files to reproduce <strong>Project 4 (Map My World)</strong> from the Udacity <strong>Robotics Nanodegree</strong>. The goal of the project is to implement <strong>Simultaneous Localization and Mapping (SLAM)</strong> in a simulated environment using <strong>RTAB-Map</strong>, generating both a <strong>2D occupancy grid</strong> and a <strong>3D OctoMap</strong>.</p>
+
+<p>The system uses a simulated differential-drive robot equipped with RGB-D and lidar sensors running in <strong>Gazebo</strong>, while <strong>RViz</strong> is used for visualization and analysis of the generated maps.</p>
+
+<p>RTAB-Map (Real-Time Appearance-Based Mapping) is a widely adopted SLAM framework capable of real-time <strong>visual and visual-lidar SLAM</strong>, with strong loop-closure detection, efficient memory management, and robust long-term mapping capabilities.</p>
+
+<p>One of RTAB-Map’s strengths is its extensive tooling and excellent ROS documentation, which makes it ideal for both learning and real-world robotic applications. Mastering RTAB-Map provides a solid foundation for advanced topics such as autonomous navigation and long-term localization.</p>
+
+<p>This project leverages the <strong>rtabmap_ros</strong> package, which acts as a ROS wrapper around RTAB-Map’s core C++ library.</p>
+
+<!--more-->
+
+<h3 id="project-overview">Project Overview</h3>
+
+<p>The repository is organized into multiple ROS packages to clearly separate concerns:</p>
+
+<ul>
+  <li><strong>my_robot</strong> – Robot description, sensors, Gazebo world, and launch files</li>
+  <li><strong>rtabmap_pkg</strong> – Teleoperation, mapping, and localization pipelines</li>
+</ul>
+
+<h3 id="using-the-package">Using the Package</h3>
+
+<p>Clone and build the workspace:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws/src
+git clone https://github.com/issaiass/RoboND_P4_MapMyWorld.git
+<span class="nb">cd</span> ..
+catkin_make
+<span class="nb">source </span>devel/setup.bash
+</code></pre></div></div>
+
+<h3 id="running-mapping">Running Mapping</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roslaunch my_robot world.launch
+roslaunch rtabmap_pkg teleop.launch
+roslaunch rtabmap_pkg mapping.launch
+</code></pre></div></div>
+
+<h3 id="localization-mode">Localization Mode</h3>
+
+<p>Disable incremental memory and reuse the generated database:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roslaunch rtabmap_pkg localization.launch
+</code></pre></div></div>
+
+<h3 id="best-practices">Best Practices</h3>
+
+<ul>
+  <li>Use low velocities for better sensor fusion</li>
+  <li>Perform multiple loop closures</li>
+  <li>Backup the RTAB-Map database before remapping</li>
+</ul>
+
+<h3 id="future-work">Future Work</h3>
+
+<ul>
+  <li>Autonomous navigation integration</li>
+  <li>Deployment on physical robots</li>
+  <li>Multi-session mapping</li>
+</ul>
+
+<h3 id="license">License</h3>
+
+<p>Open-source, see repository for details.</p>
+
+			</div>
+			<div class="blog-detail-footer">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="blog-detail-tags">
+							<ul> 
+								
+								Tags: 
+								<li>
+									<a class="tags" href="/tags/index.html#robotics">robotics</a>
+								</li>
+								
+								<li>
+									<a class="tags" href="/tags/index.html#ros">ros</a>
+								</li>
+								
+								<li>
+									<a class="tags" href="/tags/index.html#slam">slam</a>
+								</li>
+								
+								<li>
+									<a class="tags" href="/tags/index.html#mapping">mapping</a>
+								</li>
+								
+								<li>
+									<a class="tags" href="/tags/index.html#rtabmap">rtabmap</a>
+								</li>
+								
+
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="blog-detail-sib">
+					<div class="row">
+						
+
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Blog Detail End -->
+
+<!-- Blog start -->
+
+<section id="blog" class="module module-gray blog">
+	<div class="container">
+
+		<div class="module-header">
+			<h2 class="module-title">Recent Blog
+				<span>Articles</span>
+			</h2>
+			<div class="module-line"></div>
+		</div>
+
+		<div class="row">
+
+        	
+				<div class="col-sm-4">
+					<a href="/robotics/2026/01/01/map-my-world.html" class="blogList wow fadeInUp">
+						<div class="blogList-img">
+							
+								<img src="/assets/images/blog-banner-rtabmap.jpg" alt="Blog Desc">
+							
+							
+							<span>Robotics</span>
+							
+						</div>
+						<div class="blogList-desc">
+							<h3>Robot Mapping with RTAB-Map – RoboND Map My World</h3>
+							<div>Building 2D and 3D maps in simulation using ROS, Gazebo, and RTAB-Map for autonomous robot mapping and localization.</div>
+						</div>
+					</a>
+				</div>
+			
+
+			<div class="col-sm-12">
+				<a class="blog-viewMore" href="/blog.html">VIEW MORE</a>
+			</div>
+
+		</div><!-- .row -->
+	</div><!-- .container -->
+</section>
+
+<!-- Blog end -->
+	
+	<!-- Footer start -->
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-12">
+
+				<ul class="social-links">
+					
+						<li><a href="https://www.facebook.com/issaiass" class="wow fadeInUp"><i class="fab fa-facebook-f"></i></a></li>
+					
+					
+						<li><a href="https://twitter.com/daqsyspty" class="wow fadeInUp" data-wow-delay=".1s"><i class="fab fa-twitter"></i></a></li>
+					
+					
+						<li><a href="https://plus.google.com/+issaiass" class="wow fadeInUp" data-wow-delay=".2s"><i class="fab fa-google-plus-g"></i></a></li>
+					
+					
+						<li><a href="https://www.linkedin.com/in/riawe"" class="wow fadeInUp" data-wow-delay=".3s"><i class="fab fa-linkedin-in"></i></a></li>
+					
+					
+						<li><a href="http://www.pinterest.com/" class="wow fadeInUp" data-wow-delay=".4s"><i class="fab fa-pinterest-p"></i></a></li>
+					
+					
+						<li><a href="http://www.instagram.com/issaiass_" class="wow fadeInUp" data-wow-delay=".4s"><i class="fab fa-instagram-p"></i></a></li>
+										
+				</ul>
+
+				<p class="copyright">
+					© 2024 Rangel Alvarado, All Rights Reserved.
+				</p>
+
+			</div>
+
+		</div><!-- .row -->
+	</div><!-- .container -->
+</footer>
+
+<!-- Footer end -->
+
+<!-- Scroll-up -->
+
+<div class="scroll-up">
+	<a id="scroll-up"><i class="fas fa-arrow-up"></i></a>
+</div>
+
+	<!-- Javascript files -->
+
+	<script src="/assets/js/jquery-1.11.1.min.js"></script>
+	<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/js/jquery.parallax-1.1.3.js"></script>
+	<script src="/assets/js/imagesloaded.pkgd.js"></script>
+	<script src="/assets/js/jquery.shuffle.min.js"></script>
+	<script src="/assets/js/owl.carousel.min.js"></script>
+	<script src="/assets/js/jquery.fitvids.js"></script>
+	<script src="/assets/js/jquery.sticky.js"></script>
+	<script src="/assets/js/smoothscroll.js"></script>
+	<script src="/assets/js/wow.min.js"></script>
+
+	<!-- Youtube background -->
+	<script src="assets/js/jquery.mb.YTPlayer.js"></script> 
+
+	<!--PARTICLES ANIMATE JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>  
+    <script src="assets/js/particles.app.js"></script> 
+
+	<!-- Leaflet JS (open-source map library) -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+	<script src="/assets/js/map.js"></script>
+	<!-- Custom scripts -->
+	<script src="/assets/js/custom.js"></script>
+	<script src="/assets/js/custom-shuffle-init.js"></script>
+
+</body>
+</html>
