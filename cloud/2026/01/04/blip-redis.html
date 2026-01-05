@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Building 2D and 3D maps in simulation using ROS, Gazebo, and RTAB-Map for autonomous robot mapping and localization.">
+	<meta name="description" content="Discover how to build production-ready AI applications using image captioning, intelligent caching, and cloud deployment to create fast, efficient intelligent systems.">
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="/favicon.ico">
 
-	<title>Robot Mapping with RTAB-Map – RoboND Map My World</title>
+	<title>Image Captioning at Scale – Building Smart AI Inference with BLIP and Redis</title>
 
 	<!-- CSS -->
 	<!-- Bootstrap core CSS -->
@@ -110,11 +110,11 @@
 	<div class="container">
 		<div class="blog-detail-banner wow fadeIn">
 			
-				<img src="/assets/images/rtabmap-2.png" alt="Robot Mapping with RTAB-Map – RoboND Map My World">
+				<img src="/assets/images/blip-architecture.png" alt="Image Captioning at Scale – Building Smart AI Inference with BLIP and Redis">
 			
 		</div>
 		<div class="blog-detail-contents wow fadeInUp">
-			<h2>Robot Mapping with RTAB-Map – RoboND Map My World</h2>
+			<h2>Image Captioning at Scale – Building Smart AI Inference with BLIP and Redis</h2>
 			<div class="blog-detail-about clearfix">
 				<div class="media pull-left">
 					<div class="media-left">
@@ -122,86 +122,86 @@
 					</div>
 					<div class="media-body">
 						<h4 class="media-heading">RANGEL ALVARADO</h4>
-						<p>January 1, 2026</p>
+						<p>January 4, 2026</p>
 					</div>
 				</div>
 				<div class="blog-detail-category pull-right">
-					Robotics
+					cloud
 				</div>
 			</div>
 			<div class="blog-detail-content">
-				<h2 id="robond_p4_mapmyworld">RoboND_P4_MapMyWorld</h2>
+				<h2 id="bringing-ai-models-to-production">Bringing AI Models to Production</h2>
 
-<p><strong>GitHub Repository:</strong><br />
-<a href="https://github.com/issaiass/RoboND_P4_MapMyWorld">RoboND_P4_MapMyWorld</a></p>
-
-<h3 id="brief-review">Brief Review</h3>
-
-<p>This repository contains all the necessary files to reproduce <strong>Project 4 (Map My World)</strong> from the Udacity <strong>Robotics Nanodegree</strong>. The goal of the project is to implement <strong>Simultaneous Localization and Mapping (SLAM)</strong> in a simulated environment using <strong>RTAB-Map</strong>, generating both a <strong>2D occupancy grid</strong> and a <strong>3D OctoMap</strong>.</p>
-
-<p>The system uses a simulated differential-drive robot equipped with RGB-D and lidar sensors running in <strong>Gazebo</strong>, while <strong>RViz</strong> is used for visualization and analysis of the generated maps.</p>
-
-<p>RTAB-Map (Real-Time Appearance-Based Mapping) is a widely adopted SLAM framework capable of real-time <strong>visual and visual-lidar SLAM</strong>, with strong loop-closure detection, efficient memory management, and robust long-term mapping capabilities.</p>
-
-<p>One of RTAB-Map’s strengths is its extensive tooling and excellent ROS documentation, which makes it ideal for both learning and real-world robotic applications. Mastering RTAB-Map provides a solid foundation for advanced topics such as autonomous navigation and long-term localization.</p>
-
-<p>This project leverages the <strong>rtabmap_ros</strong> package, which acts as a ROS wrapper around RTAB-Map’s core C++ library.</p>
-
-<!--more-->
+<p><strong>GitHub Repository:</strong>
+<a href="https://github.com/issaiass/blip-redis">BLIP-Redis</a></p>
 
 <h3 id="project-overview">Project Overview</h3>
 
-<p>The repository is organized into multiple ROS packages to clearly separate concerns:</p>
+<p>This project demonstrates how to deploy an intelligent image captioning system at scale. Using the Salesforce BLIP model, the application automatically generates meaningful descriptions of images. The system combines modern AI capabilities with smart caching techniques and cloud infrastructure to deliver fast, reliable results to users.</p>
+
+<p>The real magic lies in the intelligent caching layer. When users upload similar images, the system returns instant results instead of running expensive AI computations again. This dramatically improves response times while reducing computational costs—a crucial consideration when deploying AI applications in production environments.</p>
+
+<p>The entire system runs on AWS cloud infrastructure using containerized services, making it scalable and maintainable. The frontend provides an intuitive interface where users simply upload images and receive captions within seconds. Behind the scenes, a carefully orchestrated architecture handles everything from processing requests to managing the AI model.</p>
+
+<!--more-->
+
+<h3 id="system-architecture">System Architecture</h3>
+
+<p>The application is built across multiple layers working together seamlessly:</p>
 
 <ul>
-  <li><strong>my_robot</strong> – Robot description, sensors, Gazebo world, and launch files</li>
-  <li><strong>rtabmap_pkg</strong> – Teleoperation, mapping, and localization pipelines</li>
+  <li><strong>Frontend</strong> – Modern web interface for uploading images and viewing captions</li>
+  <li><strong>Backend</strong> – Python API that runs the BLIP model with caching intelligence</li>
+  <li><strong>Cache Layer</strong> – Redis database storing previously generated captions</li>
+  <li><strong>Cloud Infrastructure</strong> – AWS services handling load balancing and scaling</li>
 </ul>
 
-<h3 id="using-the-package">Using the Package</h3>
+<h3 id="getting-started">Getting Started</h3>
 
-<p>Clone and build the workspace:</p>
+<p>To run the project locally:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws/src
-git clone https://github.com/issaiass/RoboND_P4_MapMyWorld.git
-<span class="nb">cd</span> ..
-catkin_make
-<span class="nb">source </span>devel/setup.bash
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone the repository</span>
+git clone https://github.com/issaiass/blip-redis.git
+<span class="nb">cd </span>blip-redis
+
+<span class="c"># Start the frontend</span>
+<span class="nb">cd</span> <span class="s2">"04 - blip-ecs-frontend"</span>
+npm <span class="nb">install</span> <span class="o">&amp;&amp;</span> npm run dev
+
+<span class="c"># Start the backend (in another terminal)</span>
+<span class="nb">cd</span> <span class="s2">"03 - blip-image-captioning-aws-ecs"</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+uvicorn main:app <span class="nt">--reload</span>
+
+<span class="c"># Start Redis (in another terminal)</span>
+docker run <span class="nt">-d</span> <span class="nt">--name</span> redis-blip <span class="nt">-p</span> 6379:6379 redis
 </code></pre></div></div>
 
-<h3 id="running-mapping">Running Mapping</h3>
+<h3 id="how-it-works">How It Works</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roslaunch my_robot world.launch
-roslaunch rtabmap_pkg teleop.launch
-roslaunch rtabmap_pkg mapping.launch
-</code></pre></div></div>
+<p>When you upload an image, the system checks if it has seen that image before. If yes, it instantly returns the cached caption. If no, it runs the AI model to generate a new caption and saves the result for future use. This means the first upload might take a couple of seconds, but any identical future uploads return results almost instantly.</p>
 
-<h3 id="localization-mode">Localization Mode</h3>
-
-<p>Disable incremental memory and reuse the generated database:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roslaunch rtabmap_pkg localization.launch
-</code></pre></div></div>
-
-<h3 id="best-practices">Best Practices</h3>
+<h3 id="key-benefits">Key Benefits</h3>
 
 <ul>
-  <li>Use low velocities for better sensor fusion</li>
-  <li>Perform multiple loop closures</li>
-  <li>Backup the RTAB-Map database before remapping</li>
+  <li><strong>Speed</strong>: Cached results return in milliseconds instead of seconds</li>
+  <li><strong>Cost-Effective</strong>: Reduced computational overhead through intelligent caching</li>
+  <li><strong>Scalable</strong>: Cloud-based infrastructure grows with your needs</li>
+  <li><strong>User-Friendly</strong>: Simple drag-and-drop interface requires no technical knowledge</li>
+  <li><strong>Production-Ready</strong>: Built with enterprise deployment best practices</li>
 </ul>
 
-<h3 id="future-work">Future Work</h3>
+<h3 id="next-steps">Next Steps</h3>
+
+<p>The foundation is strong, and there are exciting possibilities ahead:</p>
 
 <ul>
-  <li>Autonomous navigation integration</li>
-  <li>Deployment on physical robots</li>
-  <li>Multi-session mapping</li>
+  <li>GPU acceleration for even faster inference</li>
+  <li>Support for different types of AI models</li>
+  <li>Batch processing for multiple images at once</li>
+  <li>Multi-language caption generation</li>
+  <li>Advanced image analysis features</li>
 </ul>
-
-<h3 id="license">License</h3>
-
-<p>Open-source, see repository for details.</p>
 
 			</div>
 			<div class="blog-detail-footer">
@@ -212,23 +212,27 @@ roslaunch rtabmap_pkg mapping.launch
 								
 								Tags: 
 								<li>
-									<a class="tags" href="/tags/index.html#robotics">robotics</a>
+									<a class="tags" href="/tags/index.html#ai">ai</a>
 								</li>
 								
 								<li>
-									<a class="tags" href="/tags/index.html#ros">ros</a>
+									<a class="tags" href="/tags/index.html#machine-learning">machine-learning</a>
 								</li>
 								
 								<li>
-									<a class="tags" href="/tags/index.html#slam">slam</a>
+									<a class="tags" href="/tags/index.html#image-captioning">image-captioning</a>
 								</li>
 								
 								<li>
-									<a class="tags" href="/tags/index.html#mapping">mapping</a>
+									<a class="tags" href="/tags/index.html#redis">redis</a>
 								</li>
 								
 								<li>
-									<a class="tags" href="/tags/index.html#rtabmap">rtabmap</a>
+									<a class="tags" href="/tags/index.html#aws">aws</a>
+								</li>
+								
+								<li>
+									<a class="tags" href="/tags/index.html#deployment">deployment</a>
 								</li>
 								
 
@@ -240,14 +244,14 @@ roslaunch rtabmap_pkg mapping.launch
 				<div class="blog-detail-sib">
 					<div class="row">
 						
-
-						
 						<div class="col-md-6">
-							<a href="/cloud/2026/01/04/blip-redis.html" class="blog-nav">
-								<span>Next</span>
-								<p>Image Captioning at Scale – Building Smart AI Inference with BLIP and Redis</p>
+							<a href="/robotics/2026/01/01/map-my-world.html" class="blog-nav">
+								<span>Previous</span>
+								<p>Robot Mapping with RTAB-Map – RoboND Map My World</p>
 							</a>
 						</div>
+						
+
 						
 					</div>
 				</div>
