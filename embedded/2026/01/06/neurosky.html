@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Building 2D and 3D maps in simulation using ROS, Gazebo, and RTAB-Map for autonomous robot mapping and localization.">
+	<meta name="description" content="Comprehensive LabVIEW-based driver and application for real-time brain wave monitoring and EEG data acquisition using the NeuroSky Mindwave Mobile headset.">
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="/favicon.ico">
 
-	<title>Robot Mapping with RTAB-Map – RoboND Map My World</title>
+	<title>Real-Time EEG Data Acquisition with NeuroSky LabVIEW Driver</title>
 
 	<!-- CSS -->
 	<!-- Bootstrap core CSS -->
@@ -110,11 +110,11 @@
 	<div class="container">
 		<div class="blog-detail-banner wow fadeIn">
 			
-				<img src="/assets/images/rtabmap-2.png" alt="Robot Mapping with RTAB-Map – RoboND Map My World">
+				<img src="/assets/images/blog-banner-neurosky.jpg" alt="Real-Time EEG Data Acquisition with NeuroSky LabVIEW Driver">
 			
 		</div>
 		<div class="blog-detail-contents wow fadeInUp">
-			<h2>Robot Mapping with RTAB-Map – RoboND Map My World</h2>
+			<h2>Real-Time EEG Data Acquisition with NeuroSky LabVIEW Driver</h2>
 			<div class="blog-detail-about clearfix">
 				<div class="media pull-left">
 					<div class="media-left">
@@ -122,86 +122,154 @@
 					</div>
 					<div class="media-body">
 						<h4 class="media-heading">RANGEL ALVARADO</h4>
-						<p>January 1, 2026</p>
+						<p>January 6, 2026</p>
 					</div>
 				</div>
 				<div class="blog-detail-category pull-right">
-					Robotics
+					embedded
 				</div>
 			</div>
 			<div class="blog-detail-content">
-				<h2 id="robond_p4_mapmyworld">RoboND_P4_MapMyWorld</h2>
+				<h2 id="neurosky-labview-driver--application">NeuroSky LabVIEW Driver &amp; Application</h2>
 
-<p><strong>GitHub Repository:</strong><br />
-<a href="https://github.com/issaiass/RoboND_P4_MapMyWorld">RoboND_P4_MapMyWorld</a></p>
+<p><strong>GitHub Repository:</strong>
+<a href="https://github.com/issaiass/Neurosky">Neurosky</a></p>
 
 <h3 id="brief-review">Brief Review</h3>
 
-<p>This repository contains all the necessary files to reproduce <strong>Project 4 (Map My World)</strong> from the Udacity <strong>Robotics Nanodegree</strong>. The goal of the project is to implement <strong>Simultaneous Localization and Mapping (SLAM)</strong> in a simulated environment using <strong>RTAB-Map</strong>, generating both a <strong>2D occupancy grid</strong> and a <strong>3D OctoMap</strong>.</p>
+<p>This repository contains a comprehensive <strong>LabVIEW-based driver and application</strong> for real-time <strong>EEG (electroencephalography) data acquisition</strong> from the <strong>NeuroSky Mindwave Mobile</strong> headset via <strong>Bluetooth connectivity</strong>. The system establishes wireless communication through an <strong>RN-4X Bluetooth module</strong> and processes raw EEG signals to extract meaningful <strong>brainwave metrics</strong> and neural indicators.</p>
 
-<p>The system uses a simulated differential-drive robot equipped with RGB-D and lidar sensors running in <strong>Gazebo</strong>, while <strong>RViz</strong> is used for visualization and analysis of the generated maps.</p>
+<p>The NeuroSky Mindwave Mobile is a wearable EEG sensor that captures electrical activity from the brain, and this project wraps it with a professional-grade LabVIEW interface, enabling real-time visualization and analysis of brainwave data at <strong>512 Hz sampling rate</strong> with advanced signal processing and filtering capabilities.</p>
 
-<p>RTAB-Map (Real-Time Appearance-Based Mapping) is a widely adopted SLAM framework capable of real-time <strong>visual and visual-lidar SLAM</strong>, with strong loop-closure detection, efficient memory management, and robust long-term mapping capabilities.</p>
+<p>The application excels at capturing and interpreting neural signals, providing both <strong>raw waveform data</strong> and high-level <strong>cognitive indicators</strong> such as attention and meditation levels. The multi-stage signal processing pipeline ensures data integrity through checksum validation and robust frame synchronization.</p>
 
-<p>One of RTAB-Map’s strengths is its extensive tooling and excellent ROS documentation, which makes it ideal for both learning and real-world robotic applications. Mastering RTAB-Map provides a solid foundation for advanced topics such as autonomous navigation and long-term localization.</p>
-
-<p>This project leverages the <strong>rtabmap_ros</strong> package, which acts as a ROS wrapper around RTAB-Map’s core C++ library.</p>
+<p>This project is ideal for researchers, developers, and enthusiasts interested in <strong>brain-computer interfaces (BCI)</strong>, <strong>neurofeedback systems</strong>, <strong>meditation monitoring</strong>, and <strong>cognitive state assessment</strong>. LabVIEW’s graphical programming environment makes the driver accessible while maintaining professional-grade performance.</p>
 
 <!--more-->
 
 <h3 id="project-overview">Project Overview</h3>
 
-<p>The repository is organized into multiple ROS packages to clearly separate concerns:</p>
+<p>The repository is organized to integrate hardware communication, signal processing, and user interface into a cohesive system:</p>
 
 <ul>
-  <li><strong>my_robot</strong> – Robot description, sensors, Gazebo world, and launch files</li>
-  <li><strong>rtabmap_pkg</strong> – Teleoperation, mapping, and localization pipelines</li>
+  <li><strong>LabVIEW VIs</strong> – Driver modules, signal processing, and data management</li>
+  <li><strong>Compiled Executable</strong> – Ready-to-run application without LabVIEW installation</li>
+  <li><strong>Bluetooth Configuration</strong> – RN-4X module setup and COM port management</li>
+  <li><strong>Real-Time Visualization</strong> – Live display of EEG metrics and quality indicators</li>
 </ul>
 
-<h3 id="using-the-package">Using the Package</h3>
+<h3 id="core-features">Core Features</h3>
 
-<p>Clone and build the workspace:</p>
+<p><strong>Data Acquisition Capabilities:</strong></p>
+<ul>
+  <li>Real-time Bluetooth streaming from wearable EEG sensors</li>
+  <li>Raw waveform capture at <strong>512 Hz sampling rate</strong> with 3-100 Hz frequency range</li>
+  <li>Multi-stage signal processing pipeline with frame synchronization</li>
+  <li>Checksum validation for data integrity verification</li>
+  <li>Multi-byte encoding support (2-byte and 3-byte data formats)</li>
+</ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws/src
-git clone https://github.com/issaiass/RoboND_P4_MapMyWorld.git
-<span class="nb">cd</span> ..
-catkin_make
-<span class="nb">source </span>devel/setup.bash
+<p><strong>Output Metrics:</strong>
+The application provides three essential data categories:</p>
+
+<ol>
+  <li><strong>Raw Wave Values</strong> – Single-byte EEG waveform samples for advanced analysis</li>
+  <li><strong>Frequency-Band Analysis</strong> – Delta, Theta, Alpha, Beta, and Gamma wave measurements for spectral analysis</li>
+  <li><strong>High-Level Indicators</strong> – Attention (0-100 scale), Meditation (0-100 scale), and Signal Quality metrics</li>
+</ol>
+
+<h3 id="technical-architecture">Technical Architecture</h3>
+
+<p><strong>Processing Pipeline:</strong>
+The driver processes incoming data through five sequential stages:</p>
+<ol>
+  <li>Serial communication and frame reception</li>
+  <li>Frame synchronization and protocol validation</li>
+  <li>Payload extraction with checksum verification</li>
+  <li>Data type conversion and format normalization</li>
+  <li>User-selectable output filtering and smoothing</li>
+</ol>
+
+<p><strong>Hardware Requirements:</strong></p>
+<ul>
+  <li><strong>LabVIEW 2013+</strong> (for development) or Windows OS (for compiled executable)</li>
+  <li><strong>NeuroSky Mindwave Mobile</strong> headset</li>
+  <li><strong>RN-4X Bluetooth module</strong> for wireless connectivity</li>
+  <li>Virtual COM port drivers for Bluetooth serial emulation</li>
+  <li>Fixed communication baud rate of <strong>57600 bps</strong></li>
+</ul>
+
+<h3 id="installation--setup">Installation &amp; Setup</h3>
+
+<p><strong>Prerequisites:</strong></p>
+<ul>
+  <li>Pair the RN-4X Bluetooth module and note the assigned COM port</li>
+  <li>Install virtual COM port drivers for your Bluetooth adapter</li>
+  <li>Ensure the NeuroSky Mindwave Mobile headset is charged and operational</li>
+</ul>
+
+<p><strong>Running the Application:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/issaiass/Neurosky.git
+<span class="nb">cd </span>Neurosky
+<span class="c"># Open in LabVIEW 2013+ or run the compiled executable</span>
 </code></pre></div></div>
 
-<h3 id="running-mapping">Running Mapping</h3>
+<p><strong>Configuration Steps:</strong></p>
+<ol>
+  <li>Launch the LabVIEW VI or compiled executable</li>
+  <li>Select the correct COM port from the dropdown menu</li>
+  <li>Click <strong>Initialize</strong> to establish the Bluetooth connection</li>
+  <li>Don the NeuroSky Mindwave Mobile headset</li>
+  <li>Click <strong>Start Streaming</strong> to begin real-time data acquisition</li>
+</ol>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roslaunch my_robot world.launch
-roslaunch rtabmap_pkg teleop.launch
-roslaunch rtabmap_pkg mapping.launch
-</code></pre></div></div>
+<h3 id="real-time-visualization">Real-Time Visualization</h3>
 
-<h3 id="localization-mode">Localization Mode</h3>
+<p>The front panel displays:</p>
+<ul>
+  <li><strong>Raw EEG Signal</strong> – Live waveform visualization</li>
+  <li><strong>Meditation Level</strong> – Real-time meditation state indicator (0-100)</li>
+  <li><strong>Attention Value</strong> – Cognitive attention measurement (0-100)</li>
+  <li><strong>Signal Quality</strong> – Connection quality and data integrity metrics</li>
+  <li><strong>Frequency Bands</strong> – Individual measurements for Delta, Theta, Alpha, Beta, Gamma</li>
+</ul>
 
-<p>Disable incremental memory and reuse the generated database:</p>
+<h3 id="applications--use-cases">Applications &amp; Use Cases</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roslaunch rtabmap_pkg localization.launch
-</code></pre></div></div>
+<ul>
+  <li><strong>Meditation Timers</strong> – Track meditation sessions with attention/meditation metrics</li>
+  <li><strong>Attention Monitoring</strong> – Real-time cognitive workload assessment</li>
+  <li><strong>EEG Research</strong> – Data logging and analysis for neuroscience studies</li>
+  <li><strong>Brain-Computer Interfaces</strong> – BCI applications leveraging neural signals</li>
+  <li><strong>Neurofeedback Gaming</strong> – Game control and biofeedback mechanisms</li>
+  <li><strong>Cognitive Training</strong> – Attention and focus improvement programs</li>
+  <li><strong>Sleep Analysis</strong> – Brainwave patterns during different sleep stages</li>
+</ul>
 
 <h3 id="best-practices">Best Practices</h3>
 
 <ul>
-  <li>Use low velocities for better sensor fusion</li>
-  <li>Perform multiple loop closures</li>
-  <li>Backup the RTAB-Map database before remapping</li>
+  <li>Ensure proper electrode contact for optimal signal quality</li>
+  <li>Sit still during initial connection and calibration</li>
+  <li>Run in an electromagnetically quiet environment for best results</li>
+  <li>Save baseline recordings for comparison analysis</li>
+  <li>Regularly validate signal quality before extended recording sessions</li>
 </ul>
 
-<h3 id="future-work">Future Work</h3>
+<h3 id="future-enhancements">Future Enhancements</h3>
 
 <ul>
-  <li>Autonomous navigation integration</li>
-  <li>Deployment on physical robots</li>
-  <li>Multi-session mapping</li>
+  <li>Advanced signal processing with artifact removal</li>
+  <li>Machine learning classification of mental states</li>
+  <li>Network streaming for multi-user analysis</li>
+  <li>Integration with external biofeedback systems</li>
+  <li>Cloud-based data storage and analytics</li>
 </ul>
 
 <h3 id="license">License</h3>
 
-<p>Open-source, see repository for details.</p>
+<p>Open-source project. See repository for license details.</p>
 
 			</div>
 			<div class="blog-detail-footer">
@@ -212,23 +280,27 @@ roslaunch rtabmap_pkg mapping.launch
 								
 								Tags: 
 								<li>
-									<a class="tags" href="/tags/index.html#robotics">robotics</a>
+									<a class="tags" href="/tags/index.html#neurosky">neurosky</a>
 								</li>
 								
 								<li>
-									<a class="tags" href="/tags/index.html#ros">ros</a>
+									<a class="tags" href="/tags/index.html#eeg">eeg</a>
 								</li>
 								
 								<li>
-									<a class="tags" href="/tags/index.html#slam">slam</a>
+									<a class="tags" href="/tags/index.html#brainwave">brainwave</a>
 								</li>
 								
 								<li>
-									<a class="tags" href="/tags/index.html#mapping">mapping</a>
+									<a class="tags" href="/tags/index.html#labview">labview</a>
 								</li>
 								
 								<li>
-									<a class="tags" href="/tags/index.html#rtabmap">rtabmap</a>
+									<a class="tags" href="/tags/index.html#iot">iot</a>
+								</li>
+								
+								<li>
+									<a class="tags" href="/tags/index.html#biofeedback">biofeedback</a>
 								</li>
 								
 
@@ -240,14 +312,14 @@ roslaunch rtabmap_pkg mapping.launch
 				<div class="blog-detail-sib">
 					<div class="row">
 						
-
-						
 						<div class="col-md-6">
 							<a href="/cloud/2026/01/04/blip-redis.html" class="blog-nav">
-								<span>Next</span>
+								<span>Previous</span>
 								<p>Image Captioning at Scale – Building Smart AI Inference with BLIP and Redis</p>
 							</a>
 						</div>
+						
+
 						
 					</div>
 				</div>
